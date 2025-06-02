@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Kelulusan SDN 082</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; padding: 20px; color: #333; }
+    .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
+    h1 { font-size: 24px; color: #2c3e50; margin-bottom: 10px; }
+    .address { font-size: 14px; color: #555; margin-bottom: 20px; }
+    .sambutan { background: #eaf4fc; padding: 20px; border-radius: 10px; margin-bottom: 20px; font-size: 14px; color: #1c4966; }
+    .countdown { font-size: 20px; font-weight: 600; color: #e67e22; margin: 20px 0; }
+    #form-nisn { display: none; margin-top: 20px; }
+    input[type="text"] { padding: 10px; font-size: 16px; width: 80%; max-width: 300px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { background: #3498db; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #2980b9; }
+    .result { margin-top: 20px; font-size: 16px; font-weight: 600; color: #2d3436; }
+    .note { background: #fff7e6; padding: 15px; margin-top: 20px; border-left: 5px solid #f39c12; font-size: 14px; display: none; text-align: left; border-radius: 8px; }
+    .footer { margin-top: 40px; font-size: 13px; color: #777; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pengumuman Kelulusan<br>SD NEGERI 082/VII SUNGAI BENTENG II<br>Tahun Ajaran 2024/2025</h1>
+    <div class="address">Jl. Poros KM.5 Kel. Sungai Benteng Kec. Singkut</div>
+
+    <div class="sambutan">
+      <p><strong>"Selamat dan sukses kepada seluruh siswa dan siswi kelas VI yang telah berhasil menyelesaikan Pendidikan di SD Negeri 082/VII Sungai Benteng II."</strong></p>
+      <p>Teruslah belajar, gapai cita-citamu setinggi langit dan jadilah generasi berakhlakul karimah.</p>
+      <p><strong>- GIBSON SILITONGA, S.Pd -</strong></p>
+    </div>
+
+    <div id="countdown" class="countdown"></div>
+
+    <div id="form-nisn">
+      <label for="nisn">Masukkan NISN Anda:</label><br>
+      <input type="text" id="nisn" placeholder="Contoh: 0123456789"><br>
+      <button onclick="checkGraduation()">Lihat Hasil Kelulusan</button>
+    </div>
+
+    <div id="result" class="result"></div>
+    <div class="note" id="note">
+      <p><strong>📄 Catatan Penting:</strong><br>
+      Peserta didik yang dinyatakan lulus silahkan datang ke sekolah pada Hari Selasa, 03 Juni 2025.<br>
+      Harap menggunakan pakaian sekolah yang rapi dan sopan.<br>
+      Kelulusan ini bukan akhir, melainkan awal dari perjalanan yang lebih panjang.</p>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 SD NEGERI 082/VII SUNGAI BENTENG II - Kabupaten Sarolangun
+    </div>
+  </div>
+
+  <script>
+    const targetTime = new Date("2025-06-02T20:00:00+07:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+    const formEl = document.getElementById("form-nisn");
+
+    const dataSiswa = {
+      "3136479283": "AFRI RANGGA SAPUTRA", "0128250524": "ARMAN PUTRA APRIJAL",
+      "0132485428": "ARYA ADITIYA WIJAYA", "0134852115": "ARYA AHMADA",
+      "0124730230": "AZZA OKTAVIA", "0123882894": "BAGUS ALI RAMDANI",
+      "0125885442": "MUHAMAT FARHAT AL FURQON", "0135581310": "MUHAMMAD FIKRIN",
+      "0128635741": "NAJMI YASMINE RINDU YUTIA", "0134811804": "NOVA AMANDIKA",
+      "3127338521": "POPPY NEYSA LIANA", "0138843032": "RAFA ARIFIN",
+      "0132604296": "REZA RAHMAD DANI", "0132498981": "RIZKA FAUZIYA NINGSIH",
+      "0125092226": "SALMA AWALIA HAFIDZAH", "0123078049": "SARAH AYU SAPUTRI",
+      "3133568802": "SITI KHOIRUNNISA", "0113104051": "SITI SOLLEHAH",
+      "0123543611": "TEGAR CANDRA PRATAMA", "3124885725": "ZASKIA ALASZAHRA",
+      "0123508808": "AMELIA FEBRIAN", "0136629249": "APRIL IRAWAN",
+      "0128953685": "APRIL KURNIAWAN", "0131892432": "DANENDRA DAVAN ALVARO",
+      "0111704848": "Dira Febrianda", "0132608344": "ELSA HIDAYAH",
+      "0132731135": "Erni Putri", "0136981330": "FAKHRI HUSAINI",
+      "0133182700": "HUSNA KAMILA", "3138267476": "Jaka Maulana",
+      "131583385": "Justin William Sibarani", "3135210031": "Muhammad Alan Moreno",
+      "0135876464": "MUHAMMAD FILAR HUDAEVI", "0128549081": "Nabil Ramadani",
+      "3137010038": "Nabila Putri Dermawan", "0123270892": "NAJWA SAFIRA CINTA YUTIA",
+      "0125046951": "REYRA AULISKA", "3135846826": "Rifqy Pratama Ariesta",
+      "0132101718": "SHENA SIDQIATUN NAZILA", "3123767540": "Themy Rahmady",
+      "0122510526": "YACHRUMNI NILAM PUTRI"
+    };
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetTime - now;
+
+      if (distance > 0) {
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+        countdownEl.innerHTML = `${d} Hari ${h} Jam ${m} Menit ${s} Detik`;
+      } else {
+        clearInterval(timer);
+        countdownEl.style.display = "none";
+        formEl.style.display = "block";
+      }
+    }
+
+    const timer = setInterval(updateCountdown, 1000);
+
+    function checkGraduation() {
+      const nisn = document.getElementById("nisn").value.trim();
+      const resultEl = document.getElementById("result");
+      const noteEl = document.getElementById("note");
+
+      if (dataSiswa[nisn]) {
+        resultEl.innerHTML = `Nama: <strong>${dataSiswa[nisn]}</strong><br>Status: <span style='color:green;'>LULUS</span>`;
+        noteEl.style.display = "block";
+      } else {
+        resultEl.innerHTML = "<span style='color:red;'>Data tidak ditemukan. Periksa kembali NISN Anda.</span>";
+        noteEl.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
