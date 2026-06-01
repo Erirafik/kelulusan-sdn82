@@ -1,120 +1,299 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pengumuman Kelulusan SDN 082</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; background-color: #f0f4f8; padding: 20px; color: #333; }
-    .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; }
-    h1 { font-size: 24px; color: #2c3e50; margin-bottom: 10px; }
-    .address { font-size: 14px; color: #555; margin-bottom: 20px; }
-    .sambutan { background: #eaf4fc; padding: 20px; border-radius: 10px; margin-bottom: 20px; font-size: 14px; color: #1c4966; }
-    .countdown { font-size: 20px; font-weight: 600; color: #e67e22; margin: 20px 0; }
-    #form-nisn { display: none; margin-top: 20px; }
-    input[type="text"] { padding: 10px; font-size: 16px; width: 80%; max-width: 300px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
-    button { background: #3498db; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; }
-    button:hover { background: #2980b9; }
-    .result { margin-top: 20px; font-size: 16px; font-weight: 600; color: #2d3436; }
-    .note { background: #fff7e6; padding: 15px; margin-top: 20px; border-left: 5px solid #f39c12; font-size: 14px; display: none; text-align: left; border-radius: 8px; }
-    .footer { margin-top: 40px; font-size: 13px; color: #777; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman Kelulusan SD NEGERI 082/VII SUNGAI BENTENG II</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f4c81,#1e88e5);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:800px;
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.logo{
+    width:120px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#0f4c81;
+    margin-bottom:20px;
+    line-height:1.5;
+}
+
+.timer{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.box{
+    background:#1e88e5;
+    color:white;
+    padding:15px;
+    border-radius:15px;
+    min-width:90px;
+}
+
+.box span{
+    display:block;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.box small{
+    font-size:14px;
+}
+
+#formSection{
+    display:none;
+    margin-top:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid #1e88e5;
+    border-radius:10px;
+    margin-top:10px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+button{
+    background:#1e88e5;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:#1565c0;
+}
+
+.result{
+    margin-top:25px;
+    padding:20px;
+    border-radius:12px;
+    display:none;
+}
+
+.lulus{
+    background:#e8f5e9;
+    border:2px solid #4caf50;
+}
+
+.tidak{
+    background:#ffebee;
+    border:2px solid #f44336;
+}
+
+.note{
+    margin-top:20px;
+    background:#fff8e1;
+    padding:15px;
+    border-radius:10px;
+    text-align:left;
+}
+
+footer{
+    margin-top:25px;
+    color:#666;
+    font-size:14px;
+}
+
+@media(max-width:600px){
+    h1{
+        font-size:22px;
+    }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Pengumuman Kelulusan<br>SD NEGERI 082/VII SUNGAI BENTENG II<br>Tahun Ajaran 2024/2025</h1>
-    <div class="address">Jl. Poros KM.5 Kel. Sungai Benteng Kec. Singkut</div>
 
-    <div class="sambutan">
-      <p><strong>"Selamat dan sukses kepada seluruh siswa dan siswi kelas VI yang telah berhasil menyelesaikan Pendidikan di SD Negeri 082/VII Sungai Benteng II."</strong></p>
-      <p>Teruslah belajar, gapai cita-citamu setinggi langit dan jadilah generasi berakhlakul karimah.</p>
-      <p><strong>- GIBSON SILITONGA, S.Pd -</strong></p>
-    </div>
+<div class="container">
 
-    <div id="countdown" class="countdown"></div>
+<img src="https://iili.io/CF3uIta.png" class="logo">
 
-    <div id="form-nisn">
-      <label for="nisn">Masukkan NISN Anda:</label><br>
-      <input type="text" id="nisn" placeholder="Contoh: 0123456789"><br>
-      <button onclick="checkGraduation()">Lihat Hasil Kelulusan</button>
-    </div>
+<h1>
+Pengumuman Kelulusan<br>
+SD NEGERI 082/VII SUNGAI BENTENG II<br>
+Tahun Ajaran 2025/2026
+</h1>
 
-    <div id="result" class="result"></div>
-    <div class="note" id="note">
-      <p><strong>📄 Catatan Penting:</strong><br>
-      Peserta didik yang dinyatakan lulus silahkan datang ke sekolah pada Hari Selasa, 03 Juni 2025.<br>
-      Harap menggunakan pakaian sekolah yang rapi dan sopan.<br>
-      Kelulusan ini bukan akhir, melainkan awal dari perjalanan yang lebih panjang.</p>
-    </div>
+<div id="countdownSection">
 
-    <div class="footer">
-      &copy; 2025 SD NEGERI 082/VII SUNGAI BENTENG II - Kabupaten Sarolangun
-    </div>
-  </div>
+<h2 style="color:#0f4c81">Pengumuman Akan Dibuka Dalam:</h2>
 
-  <script>
-    const targetTime = new Date("2025-06-02T20:00:00+07:00").getTime();
-    const countdownEl = document.getElementById("countdown");
-    const formEl = document.getElementById("form-nisn");
+<div class="timer">
+<div class="box"><span id="days">0</span><small>Hari</small></div>
+<div class="box"><span id="hours">0</span><small>Jam</small></div>
+<div class="box"><span id="minutes">0</span><small>Menit</small></div>
+<div class="box"><span id="seconds">0</span><small>Detik</small></div>
+</div>
 
-    const dataSiswa = {
-      "3136479283": "AFRI RANGGA SAPUTRA", "0128250524": "ARMAN PUTRA APRIJAL",
-      "0132485428": "ARYA ADITIYA WIJAYA", "0134852115": "ARYA AHMADA",
-      "0124730230": "AZZA OKTAVIA", "0123882894": "BAGUS ALI RAMDANI",
-      "0125885442": "MUHAMAT FARHAT AL FURQON", "0135581310": "MUHAMMAD FIKRIN",
-      "0128635741": "NAJMI YASMINE RINDU YUTIA", "0134811804": "NOVA AMANDIKA",
-      "3127338521": "POPPY NEYSA LIANA", "0138843032": "RAFA ARIFIN",
-      "0132604296": "REZA RAHMAD DANI", "0132498981": "RIZKA FAUZIYA NINGSIH",
-      "0125092226": "SALMA AWALIA HAFIDZAH", "0123078049": "SARAH AYU SAPUTRI",
-      "3133568802": "SITI KHOIRUNNISA", "0113104051": "SITI SOLLEHAH",
-      "0123543611": "TEGAR CANDRA PRATAMA", "3124885725": "ZASKIA ALASZAHRA",
-      "0123508808": "AMELIA FEBRIAN", "0136629249": "APRIL IRAWAN",
-      "0128953685": "APRIL KURNIAWAN", "0131892432": "DANENDRA DAVAN ALVARO",
-      "0111704848": "Dira Febrianda", "0132608344": "ELSA HIDAYAH",
-      "0132731135": "Erni Putri", "0136981330": "FAKHRI HUSAINI",
-      "0133182700": "HUSNA KAMILA", "3138267476": "Jaka Maulana",
-      "131583385": "Justin William Sibarani", "3135210031": "Muhammad Alan Moreno",
-      "0135876464": "MUHAMMAD FILAR HUDAEVI", "0128549081": "Nabil Ramadani",
-      "3137010038": "Nabila Putri Dermawan", "0123270892": "NAJWA SAFIRA CINTA YUTIA",
-      "0125046951": "REYRA AULISKA", "3135846826": "Rifqy Pratama Ariesta",
-      "0132101718": "SHENA SIDQIATUN NAZILA", "3123767540": "Themy Rahmady",
-      "0122510526": "YACHRUMNI NILAM PUTRI"
-    };
+</div>
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = targetTime - now;
+<div id="formSection">
 
-      if (distance > 0) {
-        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((distance % (1000 * 60)) / 1000);
-        countdownEl.innerHTML = `${d} Hari ${h} Jam ${m} Menit ${s} Detik`;
-      } else {
-        clearInterval(timer);
-        countdownEl.style.display = "none";
-        formEl.style.display = "block";
-      }
-    }
+<h3>Masukkan NISN Anda:</h3>
 
-    const timer = setInterval(updateCountdown, 1000);
+<input type="text" id="nisn" placeholder="Masukkan NISN">
 
-    function checkGraduation() {
-      const nisn = document.getElementById("nisn").value.trim();
-      const resultEl = document.getElementById("result");
-      const noteEl = document.getElementById("note");
+<button onclick="cekKelulusan()">Lihat Hasil Kelulusan</button>
 
-      if (dataSiswa[nisn]) {
-        resultEl.innerHTML = `Nama: <strong>${dataSiswa[nisn]}</strong><br>Status: <span style='color:green;'>LULUS</span>`;
-        noteEl.style.display = "block";
-      } else {
-        resultEl.innerHTML = "<span style='color:red;'>Data tidak ditemukan. Periksa kembali NISN Anda.</span>";
-        noteEl.style.display = "none";
-      }
-    }
-  </script>
+<div id="hasil" class="result"></div>
+
+</div>
+
+<footer>
+© 2026 SD NEGERI 082/VII SUNGAI BENTENG II
+</footer>
+
+</div>
+
+<script>
+
+const siswa = {
+"0144788862":{nama:"AZRIL DEFRIANSAH",status:"LULUS"},
+"0135218784":{nama:"M.ZIDAN AL FIKRI",status:"LULUS"},
+"0147853514":{nama:"WINDA NURHASANAH",status:"LULUS"},
+"0144574394":{nama:"ENI ANJANI",status:"LULUS"},
+"0136246218":{nama:"RIKI KURNIA SAPUTRA",status:"LULUS"},
+"0143278694":{nama:"HASNA’ULIL MAFAKHIROH",status:"LULUS"},
+"3135332252":{nama:"RAIHAN",status:"LULUS"},
+"0147909793":{nama:"CICI IZNA KHOIRUNISA",status:"LULUS"},
+"0133217389":{nama:"M.KHOIRUL ANAM",status:"LULUS"},
+"3139022528":{nama:"BAYU ALFA AZANA SAPUTRA",status:"LULUS"},
+"0138900601":{nama:"AHMAD ALFIANSAH",status:"LULUS"},
+"0131414727":{nama:"KEYLA PUTRI ASKA",status:"LULUS"},
+"0143467550":{nama:"MUTIARA DUWI SAPUTRI",status:"LULUS"},
+"3147965641":{nama:"RAFFA RAMADAN",status:"LULUS"},
+"0149711068":{nama:"RAISYA AZZAHRA",status:"LULUS"},
+"0137421931":{nama:"NAUVAL BAHIQI",status:"LULUS"},
+"0131148293":{nama:"ENA OKTAVIANTY",status:"LULUS"},
+"0144055535":{nama:"ABDUL JALIL",status:"LULUS"},
+"0141839094":{nama:"HAIKAL EKA PUTRA",status:"LULUS"},
+"0144163343":{nama:"NABILA TUZZAHRA",status:"LULUS"},
+"3147206548":{nama:"FITIA AL HANNA",status:"LULUS"},
+"0146733524":{nama:"INTAN FEBRI MUALIFAH",status:"LULUS"},
+"0147728685":{nama:"IRMAYANTI",status:"LULUS"},
+"0133736568":{nama:"SOVIA AZIZAH",status:"LULUS"},
+"0145667798":{nama:"YESA ELIZABET SITANGGANG",status:"LULUS"},
+"0138145586":{nama:"FAISAL ZAQI EVENDI",status:"LULUS"},
+"0137908549":{nama:"MUHAMMAD DAFA AL-GIBRAN",status:"LULUS"},
+"0146866341":{nama:"YASMIN SIBTHI SYAIBAH",status:"LULUS"},
+"0144618222":{nama:"MELISA DWI ANTI",status:"LULUS"},
+"0138057260":{nama:"ALECIA SYAKIRA TAN",status:"LULUS"},
+"0144792211":{nama:"FATIR DANUARTA EL RAFIF",status:"LULUS"},
+"0131459490":{nama:"SILVI OKTAVIANI",status:"LULUS"},
+"0134182926":{nama:"AZLAN RAMA DANI",status:"LULUS"},
+"0135425170":{nama:"MOHZA KEZIA VANESA",status:"LULUS"},
+"3136038990":{nama:"MEGA DIAN OKTAFIANI",status:"LULUS"},
+"0143540567":{nama:"RESWARA ALANO JAUHARI",status:"LULUS"},
+"0149833407":{nama:"PUTRI ORYZA SATIVA",status:"LULUS"},
+"0148934392":{nama:"ERLITA ANGGI AYUNINGRUM",status:"LULUS"},
+"0149894851":{nama:"QAYLA NURAZIZA",status:"LULUS"},
+"0141918111":{nama:"SINDI YANUARI",status:"LULUS"},
+"3146327204":{nama:"FEBI AULIA",status:"LULUS"},
+"0149444199":{nama:"FAHREZA RAHARDIAN",status:"LULUS"},
+"0145394410":{nama:"AZMIA HOERUNNISA",status:"LULUS"},
+"0144303719":{nama:"HANIN LARASWATI",status:"LULUS"},
+"0148956315":{nama:"MUHAMMAD RAFIZA AKBAR",status:"LULUS"},
+"0148442701":{nama:"M. SANDIKA FEBRIANSYAH",status:"LULUS"},
+"0136626097":{nama:"M. ALZHIO FAHREFI",status:"LULUS"},
+"3123458950":{nama:"FIKRAN DWI RISQULLAH",status:"LULUS"},
+"0119715195":{nama:"ANGGA SAPUTRA PRATAMA",status:"LULUS"}
+};
+
+function cekKelulusan(){
+const nisn=document.getElementById('nisn').value.trim();
+const hasil=document.getElementById('hasil');
+
+if(siswa[nisn]){
+hasil.style.display='block';
+hasil.className='result lulus';
+
+hasil.innerHTML=`
+<h2>🎉 SELAMAT!</h2>
+<br>
+<p><b>Nama:</b> ${siswa[nisn].nama}</p>
+<p><b>NISN:</b> ${nisn}</p>
+<p><b>Keterangan:</b> ${siswa[nisn].status}</p>
+
+<div class="note">
+<b>📄 Catatan Penting:</b><br><br>
+Peserta didik yang dinyatakan lulus silahkan datang ke sekolah pada Hari Sabtu, 06 Juni 2026.<br>
+Harap menggunakan pakaian sekolah yang rapi dan sopan.
+</div>
+`;
+}else{
+hasil.style.display='block';
+hasil.className='result tidak';
+hasil.innerHTML='Data tidak ditemukan. Periksa kembali NISN Anda.';
+}
+}
+
+const target = new Date("June 2, 2026 20:00:00 GMT+0700").getTime();
+
+const interval = setInterval(function(){
+
+const now = new Date().getTime();
+const distance = target - now;
+
+if(distance <= 0){
+
+clearInterval(interval);
+
+document.getElementById("countdownSection").style.display="none";
+document.getElementById("formSection").style.display="block";
+
+return;
+}
+
+document.getElementById("days").innerText =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").innerText =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerText =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerText =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+</script>
+
 </body>
 </html>
